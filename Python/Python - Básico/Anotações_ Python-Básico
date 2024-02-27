@@ -1,0 +1,303 @@
+Listas:
+
+Lista vazia:
+
+=[]
+
+Lista com 3 elementos:
+
+=[1, 2, 3]
+
+Cópias e Fatiamentos:
+
+Se L = [1, 2, 3, 4] e faz-se V = L, quando há modificação de V, L se modifica
+
+Para resolver isto, faz-se V = L[:]
+
+Tamanho de Listas:
+
+Função len também servirá para listas
+
+Adição de Elementos:
+
+Função append:
+
+Se L = [], faz-se L.append("a"), então L = [a]
+
+Adição de listas:
+
+Se L = [], faz-se L += [1], então L = [1]
+Se L = [1], faz-se L += [2,3,4], então L = [1,2,3,4]
+
+Função extend:
+
+Se L = [], faz-se L.extend("a"), então L = [a]
+
+Diferença entre extend e append:
+Se o parâmetro de append for lista, a lista será adicionada como 1 elemento.
+
+Remoção de elementos da lista:
+
+Se L = [1,2,3,4], faz-se del L[1], então L = [1,3,4]
+Se L = [0,1,2,...,100], faz-se del L[1:100], então L = [0,100]
+
+Função For - Usada apenas em listas:
+
+for e in L:
+   print(e)
+
+Função range - Usada para criar listas numéricas:
+
+-range(10): 0 a 9 de passo 1
+-range(5,8): 5 a 8 de passo 1
+-range(4,16,2): 4 a 16 de passo 2
+ Para criar a lista: =list(range())
+
+Função Enumerate:
+
+Gera uma tupla com a posição di elemento e o elemento
+
+for x, e in enumerate(L)
+
+Listas com String:
+
+S = ["número", "letra", "símbolo"]
+S[0] = número
+
+Listas com Listas:
+
+S = ["número","letra","símbolo"]
+S[0][0] = n
+
+Dicionários:
+
+Associa uma chave a um valor
+
+Tabela = {"Alface":2, "Batata":5}
+
+Para acessar o preço do alface: Tabela["Alface"]
+
+Se atribuir um valor a uma chave, duas coisas podem acontecer:
+
+Se a chave existe: o valor é alterado
+Se a chave não existe: a chave é adicionada
+
+Para informar todas as chaves: Tabela.keys()
+Para informar todos os valores: Tabela.values()
+
+Para apagar uma chave: del Tabela["Alface"]
+
+Dicionários com Listas:
+
+Estoque = {"Tomate": [1000, 2.30]}
+
+quantidade, preco = operacao
+
+Tuplas:
+
+Tuplas são listas que não podem ter seus elementos alterados. Usada para desempacotamento
+
+Tupla = ("a", "b", "c") ou = a, b, c
+
+Tupla de único elemento = ("a",)
+
+Função tuple:
+
+Cria uma tupla a partir de uma lista. tuple(L)
+--------------------------------------------------------------------------------------------------------------------
+
+Trabalhando com Strings
+
+Para alterar o valor de uma string, deve-se convertê-la a lista
+
+L = "Lista"
+L = list(L)
+L[0] = "P"
+print(L) = Pista
+
+Para transformar uma lista em uma string, utiliza-se a função join
+
+L = "".join(L)
+
+Verificação Parcial de String
+
+Verificar qual o caractere inicial:
+-L.startswitch("L")
+
+Verificar qual o caractere final:
+-L.endswith("L")
+
+Transforma todos os caracteres em minúsculo:
+-L.lower("L")
+
+Transforma todos os caracteres em maiúsculo:
+-L.upper("L")
+
+Verificar se há determinado caractere na string:
+-"[Caractere ou String]" in [Variável]
+
+Verificar se não há determinado caractere na string:
+-"[Caractere ou String]" not in [Variável]
+
+Contagem
+
+Conta quantos caracteres determinados há na string:
+-L.count("A")
+
+Pesquisa de Strings
+
+Retorna a posição primeira caractere ou string dentro de outra string
+-L.find("Num")
+Se não há esta string, retorna -1
+
+Se for necessário pesquisar da direita para a esquerda, usar rfind
+
+Posicionamento de Strings
+
+Posicionar a string em um número de posições
+-L = "Teste"
+print("X" + L.center(10) + "X") retorna X   Teste   X
+
+Para completar a string com espaços à esquerda, usar ljust
+Para completar a string com espaços à direita, usar rjust
+
+Quebra ou separação de strings
+
+A função split dividirá a string pelo caractere passado pelo parâmetro
+
+L = "Teste"
+L.split("e")
+L = "T", "st", ""
+
+A função splitlines dividirá a string pelas linhas
+
+S = "Teste\ De\ Programação"
+S.splitlines()
+S = "Teste", "De", "Programação"
+
+Substituição de Strings
+
+Função replace ubstituirá parte da string por outra string
+
+S = "Teste de Programação"
+S.replace("Teste", "Prova")
+S = "Prova de Programação"
+
+Há também um terceiro parâmetro passado para indicar quantas vezes deve-se fazer substituição
+
+Remoção de Espaços em branco
+
+L = " Teste "
+L.strip()
+L = "Teste"
+
+Validação do tipo de conteúdo
+
+-isalnum() retorna True se não tiver vazio e se os caracteres forem letras ou números
+-isalpha() retorna True se houver somente letras
+-isdigit() retorna True se houver somente números
+-isnumeric() retorna True se houver somente números mais abrangentes como frações 1/3 (\u2153)
+-isupper() retorna True se todas as letras forem maiúsculas
+-islower() retorna True se todas as letras forem minúsculas
+-isspace() retorna True se houver somente caracteres em branco, espaço, etc
+-isprintable() retorna True se os caracteres podem ser impressos na tela
+
+Formatação de Strings
+
+"{0} x {1} R${2}" .format(5, "maçãs", "5.00") = "5 x maças R$5.00"
+"{1} {0}". format("primeiro", "segundo") = "segundo primeiro"
+"{0:10} {1}".format("123","456") = "123     456"
+"X{0<10}X".format("123") = "X123     X"
+"X{0:>10}X".format("123") = "X    123X "
+"X{0:^10}X".format("123") = "X  123  X " 
+"X{0:!^10}X".format("123") = "X!!123!!X"
+"{0[nome]} {0[telefone]}".format({"telefone":572, "nome":"Maria"}) = "Maria 572"
+
+Formatação de Números
+
+"{0:05}".format(5) = "00005"
+"{0:*=7}".format(32) = "*****32"
+"{0:*^10}.format(123) = "***123****"
+"{0:*>10}".format(123) = "123*******"
+"{0:*<10}".format(123) = "*******123"
+"{0:5,}".format(7532) = "7,532"
+"{0:10.5f}".format(1500.31) = "1500.31000"
+"{0:+10} {1:-10}".format(5,-6) = "    +5      -6"
+
+Formatos Númericos
+
+****************************************
+* Códigos *         Descrição          *
+****************************************
+*    b    *           Binário          *
+*    c    *         Caractere          *
+*    d    *           Base 10          *
+*    n    *        Base 10 local       *
+*    o    *            Octal           *
+*    x    * Hexadecimal com maiúsculas *
+*    X    * Hexadecimal com minúsculas *
+****************************************
+
+"{:b}".format(5678) = "1011000101110"
+"{:c}".format(65)   = "A"
+"{:o}".format(5678) = "13056"
+"{:x}".format(5678) = "162e"
+"{:X}".format(5678) = "162E"
+--------------------------------------------------------------------------------------------------------------------
+
+Funções
+
+Função def cria uma nova função
+
+def soma(a,b):
+  return(a+b)
+soma(2,9)
+
+Variáveis globais:
+-Para criar uma variável dentro de uma função, usar global
+
+Desempacotamento:
+-*[Variável] pode ser usado para desempacotar
+
+Função lambda:
+-Função sem nome
+-aumento = lambda a,b: (a*b/100)
+
+Módulos:
+
+-Funções podem ser armazenadas em arquivos .py e chamadas com import
+
+Números aleatórios:
+
+-módulo random deve ser utilizado
+
+Função type:
+-retorna o tipo da variável
+---------------------------------
+
+Arquivos
+
+**********************************************************
+* Modos de Abertura *            Operações               *
+**********************************************************
+*         r         *             Leitura                *
+*         w         * Escrita, apaga conteúdo se existir *
+*         a         *     Escrita, preserva conteúdo     *  
+*         b         *             Binário                *
+*         +         *   Atualização (Leitura e Escrita)  *
+**********************************************************
+
+Abrindo, escrevendo e fechando um arquivo:
+
+arquivo = open("Teste.txt", "w")
+for linha in range(1.101):
+   arquivo.write("%d\n" %linha)
+arquivo.close()
+
+Abrindo, lendo e fechando um arquivo:
+
+arquivo = open("Teste.txt", "r")
+for linha in arquivo.readlines()
+  print(linha)
+arquivo.close()
+---------------------------------------------------------------------------------------------------------------
